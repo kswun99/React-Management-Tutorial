@@ -1,16 +1,21 @@
 import React from "react";
 
-class Customer extends React.Component {
-  render() {
-    return (
-      <div>
-        <h2>홍길동</h2>
-        <p>961222</p>
-        <p>남자</p>
-        <p>대학생</p>
-      </div>
-    );
-  }
+interface CustomerProps {
+  name: string;
+  birthday: string;
+  gender: string;
+  job: string;
 }
+
+const Customer: React.FC<CustomerProps> = ({ name, birthday, gender, job }) => {
+  return (
+    <div>
+      <h2>Customer Name: {name}</h2>
+      <p>Birthday: {birthday}</p>
+      <p>Gender: {gender}</p>
+      <p>Job: {job}</p>
+    </div>
+  );
+};
 
 export default Customer;
