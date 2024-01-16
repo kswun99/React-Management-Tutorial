@@ -24,22 +24,19 @@ const customers = [
 function App() {
   return (
     <div>
-      <Customer
-        id={customers[0].id}
-        image={customers[0].image}
-        name={customers[0].name}
-        birthday={customers[0].birthday}
-        gender={customers[0].gender}
-        job={customers[0].job}
-      />
-      <Customer
-        id={customers[1].id}
-        image={customers[1].image}
-        name={customers[1].name}
-        birthday={customers[1].birthday}
-        gender={customers[1].gender}
-        job={customers[1].job}
-      />
+      {customers.map((c) => {
+        return (
+          <Customer
+            key={c.id}
+            id={c.id}
+            image={c.image}
+            name={c.name}
+            birthday={c.birthday}
+            gender={c.gender}
+            job={c.job}
+          />
+        );
+      })}
     </div>
     // <div className="App">
     //   <header className="App-header">
