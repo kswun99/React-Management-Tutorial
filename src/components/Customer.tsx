@@ -1,4 +1,6 @@
 import React from "react";
+import { TableRow } from "@mui/material";
+import TableCell from "@mui/material/TableCell";
 
 interface CustomerProps {
   id: number;
@@ -18,14 +20,16 @@ const Customer: React.FC<CustomerProps> = ({
   job,
 }) => {
   return (
-    <div>
-      <h2>{id}</h2>
-      <img src={image} alt="profile" />
-      <h2>Customer Name: {name}</h2>
-      <p>Birthday: {birthday}</p>
-      <p>Gender: {gender}</p>
-      <p>Job: {job}</p>
-    </div>
+    <TableRow>
+      <TableCell>{id}</TableCell>
+      <TableCell>
+        <img src={image} alt="profile" />
+      </TableCell>
+      <TableCell>{name}</TableCell>
+      <TableCell>{birthday}</TableCell>
+      <TableCell>{gender}</TableCell>
+      <TableCell>{job}</TableCell>
+    </TableRow>
   );
 };
 
